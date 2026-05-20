@@ -10,8 +10,8 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'usuarios/login.html')
     if request.method == 'POST':
-        email = request.POST('email')
-        senha = request.POST('senha')
+        email = request.POST['email']
+        senha = request.POST['senha']
         user = authenticate(request, username=email, password=senha)
         if user is not None:
             login_django(request, user)  
