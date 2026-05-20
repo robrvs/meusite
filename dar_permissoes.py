@@ -20,6 +20,8 @@ def dar_permissoes_completas(username):
     except User.DoesNotExist:
         print(f"✗ Usuário {username} não encontrado!")
 
-# Executar
+# Executar no terminal para dar permissão de superusuário: python dar_permissoes.py
 if __name__ == "__main__":
     dar_permissoes_completas('rob')
+    
+    
