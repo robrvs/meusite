@@ -1,2 +1,29 @@
-
-    Olá, sou Roberval e esta é a página de login dos usuários.
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>                        
+    <link rel="stylesheet" href="{% static 'usuarios/css/login.css' %}">    
+</head>
+<body>  
+    <h1>Login</h1>
+    <div class="container">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="input-email">
+                <label for="usermails">E-mail:</label>
+                <input type="email" id="usermails" name="email"><br><br>
+            </div>
+            <div class="input-password">
+                <label for="userpassword">Senha:</label>
+                <input type="password" id="userpassword" name="senha"><br><br>
+            </div>              
+            <div class="login-button">
+                <button class="login-button" type="submit">Login</button>
+            </div>
+        </form>                             
+    </div>
+</body>             
+</html>
