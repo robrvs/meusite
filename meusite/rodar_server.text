@@ -1,2 +1,4 @@
 http://127.0.0.1:8000/admin/login/?next=/admin/
+python manage.py createsuperuser
+python manage.py changepassword rvs
 py .\manage.py runserver  
