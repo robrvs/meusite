@@ -11,10 +11,10 @@ def login_view(request):
         return render(request, 'usuarios/login.html')
 
     if request.method == 'POST':
-        username = request.POST.get('username')
-        senha = request.POST.get('senha')
+        email = request.POST['email']
+        senha = request.POST['senha']
 
-        user = authenticate(request, username=username, password=senha)
+        user = authenticate(request, username=email, password=senha)
 
         if user is not None:
             login_django(request, user)
@@ -33,14 +33,14 @@ def cadastro(request):
         password = request.POST.get('senha')
         first_name = request.POST.get('nome')
 
-        user = User.objects.filter(username=username).first()
+        user = User.objects.filter(username=email).first()
 
         if user:
             return HttpResponse('Usuário já existe!')
 
         else:
             user = User.objects.create_user(
-                username=username,
+                username=email,
                 email=email,
                 password=password,
                 first_name=first_name
