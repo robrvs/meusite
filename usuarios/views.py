@@ -11,10 +11,10 @@ def login_view(request):
         return render(request, 'usuarios/login.html')
 
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
         senha = request.POST['senha']
 
-        user = authenticate(request, username=email, password=senha)
+        user = authenticate(request, username=username, password=senha)
 
         if user is not None:
             login_django(request, user)
