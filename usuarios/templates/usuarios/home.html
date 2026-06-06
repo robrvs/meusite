@@ -1,0 +1,59 @@
+{% extends 'usuarios/base.html' %}
+
+{% block aba %}Página Inicial{% endblock %}
+
+{% block conteudo %}
+    <section class="p-5 mb-4 text-white rounded" style="background-color: #006400;">
+        <h1 class="display-6">Bem-vindo(a) ao portal de notas</h1>
+        <p class="lead mb-0">
+            Aqui você encontrará as opções para lançar, alterar e visualizar as notas das disciplinas.
+        </p>
+    </section>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="background-color: #D3D3D3;">
+                <div class="card-body" style="background-color: #FFFFFF;">
+                    <h5 class="card-title">Lançar Notas</h5>
+                    <p class="card-text">
+                        Nesta opção você poderá lançar todas as notas referentes às suas disciplinas,
+                        discriminando os detalhes dos respectivos alunos.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'lancar' %}" class="btn btn-success">Clique aqui</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="background-color: #D3D3D3;">
+                <div class="card-body" style="background-color: #FFFFFF;">
+                    <h5 class="card-title">Alterar Notas</h5>
+                    <p class="card-text">
+                        Nesta opção você poderá alterar todas as notas já lançadas,
+                        inclusive excluir alguma nota quando necessário.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'alterar' %}" class="btn btn-success">Clique aqui</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="background-color: #D3D3D3;">
+                <div class="card-body" style="background-color: #FFFFFF;">
+                    <h5 class="card-title">Visualizar Notas</h5>
+                    <p class="card-text">
+                        Nesta opção você poderá visualizar todas as notas já lançadas
+                        referentes às suas disciplinas.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'visualizar' %}" class="btn btn-success">Clique aqui</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
